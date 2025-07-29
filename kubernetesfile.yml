@@ -2,19 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  health-care
+  name:  medicure
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app:  health-care
+      app:  medicure
   template:
     metadata:
       labels:
-        app: health-care 
+        app:  medicure
     spec:
       containers:
-        - name: insurance
+        - name: medicure
           image: aakaash03/health-care:1.0
           ports:
             - containerPort: 8082
@@ -25,11 +25,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: health-care
+  name: medicure
 spec:
   type: NodePort
   ports:
     - port: 8082
       targetPort: 8082
   selector:
-    app:  health-care
+    app:  medicure
