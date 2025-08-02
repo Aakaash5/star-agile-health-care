@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: medicure
-          image: aakaash03/medicure:1.0
+          image: aakaash03/medicure:latest
           ports:
             - containerPort: 8082
           env:
